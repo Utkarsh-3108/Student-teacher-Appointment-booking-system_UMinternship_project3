@@ -1,0 +1,13 @@
+body {
+    background: #25b5d8;
+}
+#teacher-list, #appointments, #messages {
+    display: grid;
+    gap: 15px;
+}
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
