@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Student Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="css/student.css" rel="stylesheet" />
+  <link href="css/common.css" rel="stylesheet" />
+
+  <!-- Firebase init -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+    import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+    import { getFirestore, collection, doc, setDoc, getDoc, getDocs, addDoc, updateDoc, query, where } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDMDnGuGs-Lckzd3DJh1wbalHTOjyQ6f_8",
+      authDomain: "student-teacher-system-96461.firebaseapp.com",
+      projectId: "student-teacher-system-96461",
+      storageBucket: "student-teacher-system-96461.appspot.com",
+      messagingSenderId: "167560972827",
+      appId: "1:167560972827:web:c1d681bb0e7f5a849086be",
+      measurementId: "G-KV3VEHLS39"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    try { getAnalytics(app); } catch (e) {}
+
+    window.firebaseApp = app;
+    window.auth = getAuth(app);
+    window.db = getFirestore(app);
+    window.firebaseFns = { onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, collection, doc, setDoc, getDoc, getDocs, addDoc, updateDoc, query, where };
+  </script>
+
+  <script src="js/logger.js" defer></script>
+  <script src="js/auth.js" defer></script>
+  <script src="js/appointments.js" defer></script>
+  <script src="js/messages.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Student Dashboard</h1>
+    <button onclick="logoutUser()">Logout</button>
+  </header>
+
+  <main>
+    <section>
+      <h2>Book Appointment</h2>
+      <form onsubmit="event.preventDefault(); bookAppointment();">
+        <label for="bookTeacherId">Teacher ID</label>
+        <input id="bookTeacherId" required />
+        <label for="bookDateTime">Date & Time</label>
+        <input id="bookDateTime" type="datetime-local" required />
+        <label for="bookReason">Reason</label>
+        <input id="bookReason" required />
+        <button type="submit">Book</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Send Message</h2>
+      <form onsubmit="event.preventDefault(); sendMessage();">
+        <label for="msgReceiverId">Receiver ID</label>
+        <input id="msgReceiverId" required />
+        <label for="msgContent">Message</label>
+        <input id="msgContent" required />
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
