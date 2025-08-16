@@ -1,0 +1,28 @@
+/student-teacher-booking/
+│
+├── index.html                  # Login Page
+├── register.html               # Registration Page
+├── student-dashboard.html      # Student dashboard
+├── teacher-dashboard.html      # Teacher dashboard
+├── admin-dashboard.html        # Admin dashboard
+│
+├── /css/
+│   ├── login.css         # Login page styles
+│   ├── register.css      # Registration page styles
+│   ├── student.css       # Student dashboard styles
+│   ├── teacher.css       # Teacher dashboard styles
+│   ├── admin.css         # Admin dashboard styles
+│   └── common.css        # Shared header, button, and form styles
+│
+├── /js/
+│   ├── firebase-config.js      # Firebase initialization
+│   ├── logger.js               # Action logging
+│   ├── auth.js                 # Login/registration/logout
+│   ├── appointments.js         # Appointment booking/approval
+│   ├── teachers.js             # Teacher CRUD
+│   ├── messages.js             # Messaging
+│   └── admin.js                # Admin approvals
+│
+├── README.md                   # Project documentation
+├── firebase.json               # Firebase Hosting config
+└── .gitignore                  # Ignore node_modules, etc.

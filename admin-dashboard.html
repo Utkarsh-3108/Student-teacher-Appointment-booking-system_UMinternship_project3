@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="css/admin.css" rel="stylesheet" />
+  <link href="css/common.css" rel="stylesheet" />
+
+  <!-- Firebase v9+ modular CDN initialization -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+    import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+    import { getFirestore, collection, doc, setDoc, getDoc, getDocs, addDoc, updateDoc, query, where } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDMDnGuGs-Lckzd3DJh1wbalHTOjyQ6f_8",
+      authDomain: "student-teacher-system-96461.firebaseapp.com",
+      projectId: "student-teacher-system-96461",
+      storageBucket: "student-teacher-system-96461.appspot.com",
+      messagingSenderId: "167560972827",
+      appId: "1:167560972827:web:c1d681bb0e7f5a849086be",
+      measurementId: "G-KV3VEHLS39"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    try { getAnalytics(app); } catch (e) {}
+
+    window.firebaseApp = app;
+    window.auth = getAuth(app);
+    window.db = getFirestore(app);
+    window.firebaseFns = {
+      onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut,
+      collection, doc, setDoc, getDoc, getDocs, addDoc, updateDoc, query, where
+    };
+  </script>
+
+  <script src="js/logger.js" defer></script>
+  <script src="js/auth.js" defer></script>
+  <script src="js/admin.js" defer></script>
+</head>
+<body onload="loadPendingStudents();">
+  <header>
+    <h1>Admin Dashboard</h1>
+    <button onclick="logoutUser()">Logout</button>
+  </header>
+
+  <main>
+    <section>
+      <h2>Pending Student Approvals</h2>
+      <div id="pending-students"></div>
+    </section>
+  </main>
+</body>
+</html>
