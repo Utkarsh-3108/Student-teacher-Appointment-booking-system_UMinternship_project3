@@ -5,6 +5,10 @@ A comprehensive web application designed to streamline appointment scheduling be
 
 This **Student-Teacher Appointment Booking System** was developed as part of the **Unified Mentor Internship Program** (Project 3). The application simplifies the process of students searching for teachers, booking appointments, and facilitating communication between students and educators—all in one centralized platform.
 
+## Login page
+<img width="1919" height="1079" alt="Screenshot 2025-08-17 024933" src="https://github.com/user-attachments/assets/f547cead-60f9-48fc-b719-4a37e1501e0c" />
+
+
 ## ✨ Key Features
 
 ### 👩‍🏫 **Teacher Functionality**
@@ -58,7 +62,8 @@ https://github.com/Utkarsh-3108/Student-teacher-Appointment-booking-system_UMint
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/Utkarsh-3108/Student-teacher-Appointment-booking-system_UMinternship_project3.git```
+   git clone https://github.com/Utkarsh-3108/Student-teacher-Appointment-booking-system_UMinternship_project3.git
+   ```
 
 3. **Firebase Setup**
 - Create a new Firebase project at [Firebase Console](https://console.firebase.google.com/)
